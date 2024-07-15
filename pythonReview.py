@@ -36,8 +36,15 @@ print("Min: ", lowest_temp,"on ", lowest_temp_day)
 print("avg: ",avg)
 print("above avg: ",aboveavg)
 
-print(temperatures)
-sort=temperatures.sort()
+sort=temperatures
+for i in range(7):
+	j = i
+	while(j<7):
+		if(sort[j]<sort[i]):
+			temp=sort[i]
+			sort[i]=sort[j]
+			sort[j]=temp
+		j+=1
 print(sort)
 
 
