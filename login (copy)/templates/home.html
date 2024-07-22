@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+
+</head>
+  <body>
+    <h1 style="color: white;">Hi! Facebook is totally normal haha.</h1>
+    <br>
+    <form action="/home" method="POST" style="max-width:500px;margin:auto">
+      <input class="input-field" type="text" placeholder="Quote" name="quote">
+      <input class="input-field" type="text" placeholder="Speaker" name="speaker">
+      <button type="submit" class="btn" name = "action" value="quotes">Submit</button>
+    </form>
+    <br>
+    <form action="/home" method="POST" style="max-width:500px;margin:auto">
+      <button type="submit" class="btn" name = "action" value ="signout">Sign out</button>
+    </form>
+</body>
+</body>
+</html>
