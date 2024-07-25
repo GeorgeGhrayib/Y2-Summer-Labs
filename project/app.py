@@ -23,8 +23,6 @@ storage = firebase.storage()
 
 @app.route('/', methods=["GET", "POST"])
 def index():
-    if login_session['user'] != None:
-        return redirect(url_for('dashboard'))
     if request.method == 'GET':
         return render_template("index.html") 
     elif request.form['action'] == 'signin':
