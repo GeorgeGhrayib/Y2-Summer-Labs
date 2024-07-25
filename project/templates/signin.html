@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <title>SignIn</title>
+    <h1>SignIn:</h1>
+  </head>
+    <body style="text-align: center;">
+      <form action="/signin" method="POST">
+        <input type="text" placeholder="Email" name="email">
+        <input type="password" placeholder="Password" name="password">
+        <br>
+        <button type="submit">SignIn</button>
+      </form>
+      <br>
+      <a href="/signup">Don't have an account? Sign-Up!</a>
+      <p style="color: darkred;">{{error}}</p>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <title>Dashboard</title>
+    <h1 style="text-align: center;">
+        <form action="/dashboard" method="POST">
+          Dashboard:  
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+          Level: {{level}} 
+          <button type="submit" name = "action" value="profile">Profile</button>
+          <button type="submit" name = "action" value="songlist">Song-List</button>
+          <button type="submit" name = "action" value="signout">Sign-out!</button> 
+        </form>
+    </h1>
+  </head>
+    <body>
+        <div class="container" style="text-align: center;">
+        <div class="display">
+
+        </div>
+
+        <div class="controllers">
+
+        </div>
+      </div>
+      <br>
+      <div>
+        <form action="/dashboard" method="POST" style="text-align: center;">
+          <input type="file" id="file" name="file">
+          <input type="text" placeholder="Song-Name" name="name">
+          <button type="submit" name = "action" value="submitfile">Submit File!</button> 
+          <br><br>
+        </form>
+      </div> 
+      <div>
+        <h3>{{name}}'s Songs:</h3>
+        <ol>
+          {% for s in sdic %}
+            <li>
+              <h5>{{s}}</h5>
+              <audio controls>
+                <source src="{{url_for('static', filename=sdic[s])}}" type="audio/ogg">
+              </audio>
+            </li>
+          {% endfor %}
+        </ol>
+      </div>
+  </body>
+<script src="{{url_for('static', filename='vrecorder.js')}}"></script>
+</html>

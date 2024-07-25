@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <title>{{name}}'s Profile</title>
+    <h1>{{name}}'s Profile:</h1>
+  </head>
+  <body>
+      <form action="/profile" method="POST">
+        <ol>
+              <li>
+                <h5>Full-Name: </h5>
+                <input type="text" placeholder={{name}} name="name">
+              </li>
+              <li>
+                <h5>User-Name: </h5>
+                <input type="text" placeholder={{username}} name="username">
+              </li>
+              <li>
+                <h5>Level: {{level}}</h5>
+              </li>
+              <li>
+                <h5>Email: {{email}}</h5>
+              </li>
+        </ol>
+          <button type="submit" name = "action" value="save">Save!</button> 
+          <button type="submit" name = "action" value="dashboard">Dashboard</button> 
+      </form>
+  </body>
+<script src="{{url_for('static', filename='vrecorder.js')}}"></script>
+</html>
